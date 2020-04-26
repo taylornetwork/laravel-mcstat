@@ -1,0 +1,28 @@
+{
+    "name": "taylornetwork/laravel-mcstat",
+    "require": {
+        "randomhost/mcstat": "^0.0.2",
+        "php": ">=7.1",
+        "illuminate/support": "^7.8",
+        "illuminate/database": "^7.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Taylor",
+            "email": "sam@taylornetwork.ca"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TaylorNetwork\\LaravelMcStat\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TaylorNetwork\\LaravelMcStat\\McStatServiceProvider"
+            ]
+        }
+    }
+}
