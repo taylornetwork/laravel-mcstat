@@ -16,7 +16,6 @@ class CreateStatusUpdatesTable extends Migration
         Schema::create('status_updates', function (Blueprint $table) {
             $table->id();
             $table->integer('server_id')->index();
-            $table->string('description')->nullable();
             $table->integer('player_count');
             $table->integer('player_max');
             $table->string('server_version');

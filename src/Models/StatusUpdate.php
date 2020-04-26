@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class StatusUpdate extends Model
 {
     const STATUS_KEYS = [
-        'description',
         'player_count',
         'player_max',
         'server_version',
@@ -17,7 +16,6 @@ class StatusUpdate extends Model
     ];
 
     protected $fillable = [
-        'description',
         'player_count',
         'player_max',
         'server_version',

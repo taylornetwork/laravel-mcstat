@@ -28,20 +28,16 @@ class Server extends Model
         return $this->status();
     }
 
-    public function status(): StatusUpdate
+    public function status()
     {
-        if($this->statusUpdates->count() === 0) {
-            $this->refreshStatus();
-        } else {
-            if(Config::get('mcstat.wait_for_refresh', true)) {
-                $add = Config::get('mcstat.refresh_wait_time', [ 'unit' => 'hour', 'amount' => 1]);
+        if($this->statusUpdates->count() === 0 || !Config::get('mcstat.wait_for_refresh', true)) {
+            return $this->refreshStatus();
+        }
 
-                if($this->refreshedAt->addUnit($add['unit'], $add['amount']) < Carbon::now()) {
-                    $this->refreshStatus();
-                }
-            } else {
-                $this->refreshStatus();
-            }
+        $add = Config::get('mcstat.refresh_wait_time', [ 'unit' => 'hour', 'amount' => 1]);
+
+        if($this->refreshedAt->addUnit($add['unit'], $add['amount']) < Carbon::now()) {
+            return $this->refreshStatus();
         }
 
         return $this->statusUpdates->first();

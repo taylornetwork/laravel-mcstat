@@ -16,7 +16,7 @@ class McStatServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/mcstat.php' => config_path(),
+            __DIR__.'/config' => config_path(),
         ],'config');
 
         $this->publishes([

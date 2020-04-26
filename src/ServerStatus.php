@@ -57,7 +57,7 @@ class ServerStatus
         $response = $this->getStatusWrapper()->ping($legacy);
 
         if($response) {
-            return $response['json'];
+            return $response;
         }
 
         return [];
