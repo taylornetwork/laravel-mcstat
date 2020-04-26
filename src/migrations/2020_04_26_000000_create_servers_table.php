@@ -13,7 +13,7 @@ class CreateServersTable extends Migration
      */
     public function up()
     {
-        Schema::create('calls', function (Blueprint $table) {
+        Schema::create('servers', function (Blueprint $table) {
             $table->id();
             $table->string('hostname')->nullable();
             $table->string('ip_address')->nullable();
@@ -30,6 +30,6 @@ class CreateServersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calls');
+        Schema::dropIfExists('servers');
     }
 }

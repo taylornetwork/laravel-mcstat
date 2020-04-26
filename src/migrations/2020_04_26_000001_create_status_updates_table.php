@@ -13,7 +13,7 @@ class CreateStatusUpdatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('calls', function (Blueprint $table) {
+        Schema::create('status_updates', function (Blueprint $table) {
             $table->id();
             $table->integer('server_id')->index();
             $table->string('description')->nullable();
@@ -34,6 +34,6 @@ class CreateStatusUpdatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calls');
+        Schema::dropIfExists('status_updates');
     }
 }
