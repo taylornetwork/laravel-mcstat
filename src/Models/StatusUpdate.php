@@ -28,4 +28,9 @@ class StatusUpdate extends Model
     {
         return $this->belongsTo(Server::class);
     }
+
+    public function getResponseAttribute()
+    {
+        return json_decode($this->json_response, true);
+    }
 }
