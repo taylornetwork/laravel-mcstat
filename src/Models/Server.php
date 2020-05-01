@@ -11,12 +11,7 @@ use TaylorNetwork\LaravelMcStat\ServerStatus;
 
 class Server extends Model
 {
-    protected $fillable = [
-        'hostname',
-        'ip_address',
-        'port',
-        'legacy',
-    ];
+    protected $guarded = [];
 
     public function statusUpdates()
     {
